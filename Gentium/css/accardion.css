@@ -1,0 +1,10 @@
+ div p{
+    max-height: 0;
+    overflow: hidden;
+}
+div:target p{
+    max-height: 100px;
+}
+#d,#q,#f{
+    overflow: hidden;
+}

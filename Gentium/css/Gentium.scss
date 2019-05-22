@@ -1,0 +1,573 @@
+$primay-color:#e9204f;
+$second-color:#fff;
+$third-color:#101010;
+%enter{
+    h2{
+        font-weight: 700;
+        letter-spacing: -2px;
+        font-size: 3em;
+        color: $third-color;
+    }
+    p{
+        font-weight: 700;
+        letter-spacing: -2px;
+        font-size: 1em;
+        color: $primay-color;
+        line-height: 0.85em
+    }
+}
+%fdir{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px
+}
+%span{
+    background-color: $primay-color;
+    width: 50px;
+    height: 2px;
+    display: block;
+}
+%span1{
+    background-color: $primay-color;
+    width: 2px;
+    height: 50px;
+    display: block;
+}
+%button{
+    background-color: transparent;
+    border: 2px solid $primay-color;
+    color: $second-color;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 17px 0px;
+    letter-spacing: -0.8px;
+    margin: 50px 0;
+    width: 30%;
+}
+%button1{
+    @extend %button;
+    background: linear-gradient( to right, black  50%,$primay-color 50% );
+    background-size: 200% 100%;
+    transition: all 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+    background-position: -100%
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#header{
+    background-color: black;
+    padding: 35px 0;
+    .nav-menu{
+        width: 100%;
+        height: 0%;
+        background: black !important;
+        a{
+            font-weight: 700;
+            font-size: 40px;
+            letter-spacing: -2px
+        }
+        li{
+            padding: 0px 8px;
+            position: relative;
+            a{
+                color: white !important ;
+                font-size: 18px;
+                letter-spacing: -0.8px;
+            } 
+            .lin{cursor: pointer;}
+            .lin::before{
+                content: "";
+                width: 0px;
+                height: 2px;
+                position: absolute;
+                bottom: 5px;
+                left: 18px;
+                transition: .7s cubic-bezier(0.17, 0.67, 0, 1.01);
+                background: white;
+                }
+            .lin{
+                &:hover{
+                &::before{
+                    content: "";
+                    position: absolute;
+                  
+                    background: #e9204f;
+                    width: 20px;
+                }
+                }
+            
+           
+            }
+        }
+       
+    }
+    
+}
+.fixed {
+        position: fixed; 
+        top: 0; 
+        z-index: 1000;
+        width: 100%;
+        opacity: 0.95;
+        
+    }
+#section-1{
+    background-color: #000000;
+    background-image: url(http://gentium.pixerex.com/wp/wp-content/uploads/2019/01/hero_02.jpg);
+    background-position: 70% 48%;
+    background-repeat: no-repeat;
+    background-size: 640px auto;
+  
+    .fdir{
+        @extend %fdir;
+        
+    }
+    span{
+       @extend %span;
+    }
+    h1{
+        font-size: 5rem;
+        color: $second-color;
+        letter-spacing: -3px;
+        font-weight: 700;
+        line-height: 80px
+    }
+    button{
+        @extend %button
+    };
+    button:hover{
+        @extend %button1; 
+    }
+    
+    .m4{
+        background: $third-color;
+        color: $second-color; 
+        position: relative;
+        span{
+            @extend %span;
+        }
+        i{
+            color: $primay-color
+        }
+        h4{
+            letter-spacing: -2px;
+            font-weight: 700
+        }
+        p{
+            font-size: 20px;
+        }
+        cursor: pointer;
+        
+       .kk{
+           z-index: 12;
+       }
+    }.m43{
+        position: relative;
+      
+        &::after{
+            content: "";
+            width:105%;
+            position: absolute;
+            bottom: -20px;
+            left: 0px;
+            background-color: $primay-color;
+            height: 70px;
+            z-index: -1;
+        }
+    }
+    .m41,.m42:hover ,.m43:hover{
+        background: $primay-color;
+        color: $second-color !important;
+        box-shadow: 0px 25px 40px -10px $third-color;
+        :first-child{
+            color: $second-color
+        }
+        span{
+            background:$second-color 
+        }
+    }
+    .m42:hover ,.m43:hover{
+        transition: all 0.5s;
+    }
+    
+}
+#section-2{
+    padding: 100px 0;
+    .fdir{
+        @extend %fdir;padding:  30px 0;
+        span{
+            @extend %span;
+            
+        };
+    };
+    @extend %enter;
+    ul{
+        background: whitesmoke;
+        padding-bottom: 1em;
+        overflow: hidden;
+        padding: 25px 0;
+        position: relative;
+        transition: all 1s linear;
+        li{
+            position: relative;
+            &:first-child{
+            left:-1px;
+            color: gray;
+            font-size: 30px;
+            top: 20px;
+            position: absolute;
+        transition: all 0.3s linear;
+        opacity: 0;
+
+        }
+        &:last-child{
+            left:170px;
+            color: gray;
+        transition: all 0.3s linear;
+
+        }
+        &:nth-child(2){
+            left: 20px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: -1px;
+        transition: all 0.3s linear;
+
+        }
+            // neye gor li first childi ?
+    }
+    &:hover{
+        background: #e9204f;
+        li{
+            &:first-child{
+            left:-1px;
+            font-size: 50px;
+            top: 0px;
+            opacity: 1;
+        }
+        &:last-child{
+            left:175px;
+        }
+        &:nth-child(2){
+            left: 100px; 
+            color: white;   
+        } 
+        }
+    }
+   
+    }
+}
+#section-3{
+    .c{
+        span{
+            @extend %span1;
+            
+            margin:  auto;
+            margin-bottom: 100px;
+        }
+    }
+    .fdir{
+        @extend %fdir;
+        @extend %enter;
+        span{
+            @extend %span;
+        }
+    }
+    button{
+        @extend %button ; 
+        color: $third-color;
+       width: 20%;
+        }
+     button:hover{
+        @extend %button;
+        background: linear-gradient( to right, white  50%,$primay-color 50% );
+        background-size: 200% 100%;
+        transition: all 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+        background-position: -100%;
+        color: $second-color;
+        width: 20%;
+        }
+        .pale{
+            padding-left: -15px;
+        }
+        .pari{
+            padding-right: -15px;
+        }
+        .hov{
+            height: 400px;
+            clip-path: inset(0);
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: all .8s ease;
+            img{
+                width: 100%;
+                height: 100%;
+                filter: grayscale(100%);
+                transition: all .8s ease;
+            }
+            
+            .v{
+                position: absolute;
+                top: 45%;
+                left: 35%;
+                color: #fff;
+                display: none;
+                transition: all .2s ease;
+            }
+            
+        } 
+        .hov:hover{
+                .v{
+                    display: block
+                }
+                overflow: hidden;
+                clip-path: inset(5%);
+                img{ 
+                     transform: scale(1.2); 
+                   
+                    filter: grayscale(0%);
+                    transition: all .8s ease;
+                }
+                transition: all .2s ease;
+            
+            }
+}
+#section-4{
+    padding: 100px 0;
+    .c{
+        span{
+            @extend %span1;
+            margin: auto;
+            margin-bottom: 100px
+        }
+    }
+    .fdir{
+        @extend %fdir;
+        @extend %enter;
+        span{
+            @extend %span;
+        }
+    }
+    .mc{
+        span{
+            font-size: 20px;
+            color: gray
+        }
+    }
+    .shk {
+        position: relative;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            filter: grayscale(100%);
+        }
+        img:hover{
+            filter: grayscale(30%);
+        }
+    }
+    .shk1{
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            cursor: pointer; 
+            filter: grayscale(100%);
+        }
+        img:hover{
+            filter: grayscale(30%);
+        }
+    }
+    .sz{
+        position: absolute;
+        bottom: 5px;
+        left: 45px;
+        
+        color: white;
+        font-size: 20px;
+        &:hover{
+            img:hover{
+                filter: grayscale(30%);
+            }
+        }
+        h5{
+            line-height: 1px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        
+    }
+    .quote{
+        p{
+            color: gray;
+            font-size: 15px;
+        }
+    }
+}
+#section-5{
+    padding-bottom: 100px;
+    .c{
+        span{
+            @extend %span1;
+            margin: auto;
+            margin-bottom: 100px
+        }
+    }
+    .fdir{
+        span{
+            @extend %span;
+        }
+        
+        @extend %enter;
+
+    }
+    .quote5{
+        padding: 100px 0  0 50px;
+        .p1{
+            color: gray;
+            font-size: 22px;
+             padding:  25px 0;
+        }
+        .p2{
+            color: $third-color;
+            font-weight: 700;
+            font-size: 20px;
+           
+        }
+    } 
+    .im5{
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        &::after{
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        height: 20%;
+        width: 30%;
+        background-color: $primay-color;
+        z-index: -1;
+    }
+    } 
+    hr{
+        width: 100%;
+        height: 0.1px;
+        background: rgb(199, 187, 187);
+        margin: 100px 0 50px 0;
+    }
+}
+#section-6{
+    .c{
+        span{
+            @extend %span1;
+            margin: auto;
+            margin-bottom: 100px
+        }
+    }
+    .fdir{
+        @extend %enter;
+    }
+    .hov1{
+        position: relative;
+       
+       overflow: hidden;
+        img{
+            width: 100%;
+            height:100%;
+            transition: all .3s ease-in-out;
+            filter: grayscale(100%)
+           
+        }
+        .quote6{
+            width: 100%;
+            position: absolute;
+            top: 70%;
+           transition: all .3s ease-in-out;
+            left: 0%;
+            color: white;
+           
+           
+        }
+    }
+    .hov1:hover .quote6{
+        top:60%;
+    }
+    .hov1:hover img{
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
+        filter: grayscale(0%);
+    }
+    .slick-next{
+        
+        right: 10px;
+    }
+    .slick-prev{
+        
+        left: 15px;
+        z-index: 7;
+        
+    }
+
+}
+#section-7{
+    background: $third-color;
+    padding:  100px 0;
+    margin-top: 100px;
+    .hover7{
+        span{
+        color: white;
+       
+        }
+        top:0;
+        margin-right: 5px;
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: 1px solid  #e9204f;
+        border-radius: 50%;
+        padding: 15px 20px;
+       
+    }
+    .hover7:hover{
+        span{
+         color: #e9204f  ;
+        
+        }
+        top: -15px;
+        
+    }
+    h4{
+        color: white;
+    }
+    button{
+        @extend %button ; 
+        color: white;
+        transition: all 0.6s cubic-bezier(0.17, 0.67, 0, 1.01);
+       width: 50%;
+        }
+     button:hover{
+        @extend %button;
+        background: linear-gradient( to right, $third-color  50%,$primay-color 50% );
+        background-size: 200% 100%;
+        background-position: -100%;
+        color: $second-color;
+        width: 50%;
+        }
+}
+@media (max-width:540px){
+ .axm{
+     padding-left:0 !important;
+     padding-right:0 !important;
+ 
+    }
+
+}
